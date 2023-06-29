@@ -5,7 +5,7 @@ import numpy as np
 import os
 
 path = os.path.join(os.getcwd(), 'output')
-file = os.path.join(path, 'output5_2.dat')
+file = os.path.join(path, 'rawData5_2.dat')
 
 # read the file as a dataframe
 df = pd.read_csv(file, sep=',', header=None)

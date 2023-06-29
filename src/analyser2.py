@@ -5,7 +5,7 @@ import numpy as np
 import os
 
 path = os.path.join(os.getcwd(), 'output')
-file_names=["output5_static.dat", "output5_static1.dat", "output5_dynamic1.dat", "output5_guided10.dat"]
+file_names=["rawData_static.dat", "rawData_static1.dat", "rawData_guided.dat", "rawData_dynamic.dat"]
 files = [os.path.join(path, name) for name in file_names]
 
 
@@ -13,7 +13,7 @@ df = pd.DataFrame()
 
 for file in files:
     temp_df = pd.read_csv(file, sep=',', header=None)
-    temp_df['strategy'] = str(file).removeprefix(path).removeprefix('\\output5_').removesuffix('.dat')
+    temp_df['strategy'] = str(file).removeprefix(path).removeprefix('\\rawData_').removesuffix('.dat')
     df = df.append(temp_df, ignore_index=True)
 
 df.columns = ['n', 'p', 'time', 'strategy']
